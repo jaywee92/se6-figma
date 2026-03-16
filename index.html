@@ -1,25 +1,127 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>se6-figma</title>
+    <title>Tailwind Learning Platform | SE-6 Group Project</title>
+
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <style type="text/tailwindcss">
+        @layer components {
+            .code-block {
+                @apply bg-slate-900 text-indigo-300 p-4 rounded-lg font-mono text-xs mb-4 shadow-inner;
+            }
+            .learning-section {
+                @apply mb-16 p-8 bg-white rounded-3xl shadow-sm border border-slate-100 hover:border-indigo-200 transition-colors;
+            }
+            .label {
+                @apply text-xs font-bold uppercase tracking-wider text-indigo-500 mb-2 block;
+            }
+        }
+    </style>
 </head>
 
-<body class="bg-gray-100 text-gray-900 flex flex-col min-h-screen">
+<body class="bg-slate-50 text-slate-900 font-sans antialiased scroll-smooth">
 
-    <header class="bg-white shadow p-4">
-        <h1 class="text-2xl font-bold text-blue-600">se6-figma</h1>
+    <nav class="bg-white/80 backdrop-blur-md sticky top-0 z-50 border-b border-slate-200">
+        <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+            <span class="text-2xl font-black text-indigo-600 tracking-tighter">TAILWIND.LAB</span>
+            <div class="hidden md:flex space-x-6">
+                <a href="#layout" class="text-sm font-medium hover:text-indigo-600 transition">Layout</a>
+                <a href="#spacing" class="text-sm font-medium hover:text-indigo-600 transition">Spacing</a>
+                <a href="#states" class="text-sm font-medium hover:text-indigo-600 transition">States</a>
+            </div>
+        </div>
+    </nav>
+
+    <header class="py-20 px-6 text-center">
+        <h1 class="text-5xl md:text-7xl font-black mb-6 tracking-tight">
+            Learn <span class="text-indigo-600">Tailwind</span> <br>by Building.
+        </h1>
+        <p class="max-w-2xl mx-auto text-xl text-slate-500">
+            This project is our internal learning platform. Use these sections as a reference for our group work.
+        </p>
     </header>
 
-    <main class="flex-grow p-8">
-        <p class="text-lg">Attention Attention</p>
+    <main class="max-w-5xl mx-auto px-6 pb-20">
+
+        <section id="layout" class="learning-section">
+            <span class="label">Concept 01</span>
+            <h2 class="text-3xl font-bold mb-6">Layout Systems (Flex & Grid)</h2>
+            <div class="grid md:grid-cols-2 gap-10">
+                <div>
+                    <p class="text-slate-600 mb-4">Use <code class="text-indigo-600">grid-cols-*</code> to create
+                        columns and <code class="text-indigo-600">gap-*</code> for spacing.</p>
+                    <div class="code-block">
+                        &lt;div class="grid grid-cols-3 gap-2"&gt;<br>
+                        &nbsp;&nbsp;&lt;div class="bg-indigo-500 h-10"&gt;&lt;/div&gt;<br>
+                        &lt;/div&gt;
+                    </div>
+                </div>
+                <div class="grid grid-cols-3 gap-2 bg-slate-100 p-4 rounded-xl">
+                    <div class="bg-indigo-500 h-12 rounded shadow-lg animate-pulse"></div>
+                    <div class="bg-indigo-400 h-12 rounded shadow-lg animate-pulse delay-75"></div>
+                    <div class="bg-indigo-300 h-12 rounded shadow-lg animate-pulse delay-150"></div>
+                </div>
+            </div>
+        </section>
+
+        <section id="responsive" class="learning-section">
+            <span class="label">Concept 02</span>
+            <h2 class="text-3xl font-bold mb-6">Mobile-First Responsiveness</h2>
+            <div class="bg-indigo-50 p-6 rounded-2xl mb-6">
+                <div
+                    class="w-full md:w-1/2 lg:w-1/4 bg-white p-4 rounded-xl shadow-sm text-center font-bold text-indigo-600 border-2 border-indigo-200">
+                    Resize your browser!
+                </div>
+            </div>
+            <div class="code-block">
+                class="w-full md:w-1/2 lg:w-1/4"
+            </div>
+            <p class="text-sm text-slate-500 italic">Full width on mobile, 50% on tablet, 25% on desktop.</p>
+        </section>
+
+        <section id="states" class="learning-section">
+            <span class="label">Concept 03</span>
+            <h2 class="text-3xl font-bold mb-6">Interactive States</h2>
+            <div class="flex flex-wrap gap-4">
+                <button
+                    class="bg-indigo-600 text-white px-8 py-3 rounded-xl font-bold hover:bg-slate-900 hover:scale-105 transition-all duration-300 cursor-pointer">
+                    Hover Me
+                </button>
+                <button
+                    class="bg-white border-2 border-slate-200 text-slate-900 px-8 py-3 rounded-xl font-bold active:scale-90 transition-all cursor-pointer">
+                    Click Me
+                </button>
+            </div>
+            <div class="mt-6 code-block">
+                class="hover:scale-105 active:scale-90 transition-all"
+            </div>
+        </section>
+
+        <section id="custom" class="learning-section">
+            <span class="label">Concept 04</span>
+            <h2 class="text-3xl font-bold mb-6">Arbitrary Values</h2>
+            <p class="text-slate-600 mb-4 text-sm">Need a specific value? Use square brackets <code>[ ]</code>.</p>
+            <div class="flex items-center gap-4">
+                <div
+                    class="w-[123px] h-[40px] bg-[#ff00ea] rounded-full flex items-center justify-center text-[10px] text-white font-black">
+                    Custom Width
+                </div>
+                <div class="code-block mb-0 flex-grow">
+                    class="w-[123px] bg-[#ff00ea]"
+                </div>
+            </div>
+        </section>
+
     </main>
 
-    <footer class="bg-gray-800 text-white p-4 text-center">
-        &copy; 2026 se6-figma
+    <footer class="bg-white border-t border-slate-200 py-12 text-center">
+        <p class="text-slate-400 text-sm">
+            Group Project SE-6 | Presentation: Wednesday 11:00am
+        </p>
     </footer>
 
 </body>
