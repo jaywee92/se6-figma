@@ -4,124 +4,139 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tailwind Learning Platform | SE-6 Group Project</title>
+    <title>Tailwind References | SE6-FIGMA</title>
 
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 
     <style type="text/tailwindcss">
         @layer components {
-            .code-block {
-                @apply bg-slate-900 text-indigo-300 p-4 rounded-lg font-mono text-xs mb-4 shadow-inner;
+            .table-header {
+                @apply px-4 py-3 bg-slate-100 text-left text-xs font-bold uppercase text-slate-600 border-b border-slate-200;
             }
-            .learning-section {
-                @apply mb-16 p-8 bg-white rounded-3xl shadow-sm border border-slate-100 hover:border-indigo-200 transition-colors;
+            .table-cell {
+                @apply px-4 py-3 border-b border-slate-100 text-sm align-top;
             }
-            .label {
-                @apply text-xs font-bold uppercase tracking-wider text-indigo-500 mb-2 block;
+            .code-snippet {
+                @apply font-mono text-indigo-600 bg-indigo-50 px-2 py-1 rounded text-xs whitespace-nowrap;
             }
         }
     </style>
 </head>
 
-<body class="bg-slate-50 text-slate-900 font-sans antialiased scroll-smooth">
+<body class="bg-slate-50 text-slate-900 font-sans antialiased">
 
-    <nav class="bg-white/80 backdrop-blur-md sticky top-0 z-50 border-b border-slate-200">
-        <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
-            <span class="text-2xl font-black text-indigo-600 tracking-tighter">TAILWIND.LAB</span>
-            <div class="hidden md:flex space-x-6">
-                <a href="#layout" class="text-sm font-medium hover:text-indigo-600 transition">Layout</a>
-                <a href="#spacing" class="text-sm font-medium hover:text-indigo-600 transition">Spacing</a>
-                <a href="#states" class="text-sm font-medium hover:text-indigo-600 transition">States</a>
-            </div>
+    <nav class="bg-white border-b border-slate-200 p-4 sticky top-0 z-50 shadow-sm">
+        <div class="max-w-6xl mx-auto flex justify-between items-center">
+            <span class="font-black text-indigo-600">TAILWIND - SE6-FIGMA</span>
+            <span class="text-xs text-slate-400 font-mono">by Moritz and Jochen</span>
         </div>
     </nav>
 
-    <header class="py-20 px-6 text-center">
-        <h1 class="text-5xl md:text-7xl font-black mb-6 tracking-tight">
-            Learn <span class="text-indigo-600">Tailwind</span> <br>by Building.
-        </h1>
-        <p class="max-w-2xl mx-auto text-xl text-slate-500">
-            This project is our internal learning platform. Use these sections as a reference for our group work.
-        </p>
-    </header>
+    <main class="max-w-6xl mx-auto px-6 py-12">
 
-    <main class="max-w-5xl mx-auto px-6 pb-20">
+        <header class="mb-12">
+            <h1 class="text-4xl font-black mb-2">Utility Class Reference</h1>
+            <p class="text-slate-500">Syntaxes for Tailwind in HTML</p>
+        </header>
 
-        <section id="layout" class="learning-section">
-            <span class="label">Concept 01</span>
-            <h2 class="text-3xl font-bold mb-6">Layout Systems (Flex & Grid)</h2>
-            <div class="grid md:grid-cols-2 gap-10">
-                <div>
-                    <p class="text-slate-600 mb-4">Use <code class="text-indigo-600">grid-cols-*</code> to create
-                        columns and <code class="text-indigo-600">gap-*</code> for spacing.</p>
-                    <div class="code-block">
-                        &lt;div class="grid grid-cols-3 gap-2"&gt;<br>
-                        &nbsp;&nbsp;&lt;div class="bg-indigo-500 h-10"&gt;&lt;/div&gt;<br>
-                        &lt;/div&gt;
-                    </div>
+        <div class="overflow-x-auto bg-white rounded-2xl shadow-xl border border-slate-200">
+            <table class="w-full border-collapse">
+                <thead>
+                    <tr>
+                        <th class="table-header">Category</th>
+                        <th class="table-header">Class Prefix</th>
+                        <th class="table-header">Description</th>
+                        <th class="table-header">Code Example</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="table-cell font-bold text-slate-700">Layout</td>
+                        <td class="table-cell"><code class="code-snippet">flex</code></td>
+                        <td class="table-desc table-cell text-slate-500">Aligns items in a row.</td>
+                        <td class="table-cell"><code
+                                class="text-[10px] text-slate-400">&lt;div class="flex gap-4"&gt;</code></td>
+                    </tr>
+                    <tr>
+                        <td class="table-cell"></td>
+                        <td class="table-cell"><code class="code-snippet">grid</code></td>
+                        <td class="table-desc table-cell text-slate-500">Creates a grid system.</td>
+                        <td class="table-cell"><code
+                                class="text-[10px] text-slate-400">&lt;div class="grid grid-cols-2"&gt;</code></td>
+                    </tr>
+
+                    <tr>
+                        <td class="table-cell font-bold text-slate-700">Spacing</td>
+                        <td class="table-cell"><code class="code-snippet">p-{n}</code></td>
+                        <td class="table-desc table-cell text-slate-500">Internal padding.</td>
+                        <td class="table-cell"><code class="text-[10px] text-slate-400">&lt;div class="p-8"&gt;</code>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="table-cell"></td>
+                        <td class="table-cell"><code class="code-snippet">m-{n}</code></td>
+                        <td class="table-desc table-cell text-slate-500">External margin.</td>
+                        <td class="table-cell"><code
+                                class="text-[10px] text-slate-400">&lt;div class="m-auto"&gt;</code></td>
+                    </tr>
+
+                    <tr>
+                        <td class="table-cell font-bold text-slate-700">Text</td>
+                        <td class="table-cell"><code class="code-snippet">text-{size}</code></td>
+                        <td class="table-desc table-cell text-slate-500">Changes font size.</td>
+                        <td class="table-cell"><code
+                                class="text-[10px] text-slate-400">&lt;h1 class="text-3xl"&gt;</code></td>
+                    </tr>
+                    <tr>
+                        <td class="table-cell"></td>
+                        <td class="table-cell"><code class="code-snippet">font-{w}</code></td>
+                        <td class="table-desc table-cell text-slate-500">Changes font weight.</td>
+                        <td class="table-cell"><code
+                                class="text-[10px] text-slate-400">&lt;p class="font-bold"&gt;</code></td>
+                    </tr>
+
+                    <tr>
+                        <td class="table-cell font-bold text-slate-700">Responsive</td>
+                        <td class="table-cell"><code class="code-snippet">md:</code></td>
+                        <td class="table-desc table-cell text-slate-500">Applies style on Desktop.</td>
+                        <td class="table-cell"><code
+                                class="text-[10px] text-slate-400">&lt;div class="w-full md:w-1/2"&gt;</code></td>
+                    </tr>
+
+                    <tr>
+                        <td class="table-cell font-bold text-slate-700">Interaction</td>
+                        <td class="table-cell"><code class="code-snippet">hover:</code></td>
+                        <td class="table-desc table-cell text-slate-500">Style on mouse over.</td>
+                        <td class="table-cell"><code
+                                class="text-[10px] text-slate-400">&lt;button class="hover:bg-red-500"&gt;</code></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <section class="mt-16 bg-indigo-900 p-8 rounded-3xl text-white">
+            <h2 class="text-2xl font-bold mb-4">Practical Component Example</h2>
+            <div class="flex flex-col md:flex-row gap-6 items-center">
+                <div class="bg-indigo-800 p-4 rounded-lg flex-1">
+                    <p class="text-xs font-mono text-indigo-300">
+                        &lt;button class="bg-white text-indigo-900 px-6 py-2 rounded-full font-bold hover:scale-105
+                        transition-all"&gt;
+                    </p>
                 </div>
-                <div class="grid grid-cols-3 gap-2 bg-slate-100 p-4 rounded-xl">
-                    <div class="bg-indigo-500 h-12 rounded shadow-lg animate-pulse"></div>
-                    <div class="bg-indigo-400 h-12 rounded shadow-lg animate-pulse delay-75"></div>
-                    <div class="bg-indigo-300 h-12 rounded shadow-lg animate-pulse delay-150"></div>
-                </div>
-            </div>
-        </section>
-
-        <section id="responsive" class="learning-section">
-            <span class="label">Concept 02</span>
-            <h2 class="text-3xl font-bold mb-6">Mobile-First Responsiveness</h2>
-            <div class="bg-indigo-50 p-6 rounded-2xl mb-6">
-                <div
-                    class="w-full md:w-1/2 lg:w-1/4 bg-white p-4 rounded-xl shadow-sm text-center font-bold text-indigo-600 border-2 border-indigo-200">
-                    Resize your browser!
-                </div>
-            </div>
-            <div class="code-block">
-                class="w-full md:w-1/2 lg:w-1/4"
-            </div>
-            <p class="text-sm text-slate-500 italic">Full width on mobile, 50% on tablet, 25% on desktop.</p>
-        </section>
-
-        <section id="states" class="learning-section">
-            <span class="label">Concept 03</span>
-            <h2 class="text-3xl font-bold mb-6">Interactive States</h2>
-            <div class="flex flex-wrap gap-4">
-                <button
-                    class="bg-indigo-600 text-white px-8 py-3 rounded-xl font-bold hover:bg-slate-900 hover:scale-105 transition-all duration-300 cursor-pointer">
-                    Hover Me
-                </button>
-                <button
-                    class="bg-white border-2 border-slate-200 text-slate-900 px-8 py-3 rounded-xl font-bold active:scale-90 transition-all cursor-pointer">
-                    Click Me
-                </button>
-            </div>
-            <div class="mt-6 code-block">
-                class="hover:scale-105 active:scale-90 transition-all"
-            </div>
-        </section>
-
-        <section id="custom" class="learning-section">
-            <span class="label">Concept 04</span>
-            <h2 class="text-3xl font-bold mb-6">Arbitrary Values</h2>
-            <p class="text-slate-600 mb-4 text-sm">Need a specific value? Use square brackets <code>[ ]</code>.</p>
-            <div class="flex items-center gap-4">
-                <div
-                    class="w-[123px] h-[40px] bg-[#ff00ea] rounded-full flex items-center justify-center text-[10px] text-white font-black">
-                    Custom Width
-                </div>
-                <div class="code-block mb-0 flex-grow">
-                    class="w-[123px] bg-[#ff00ea]"
+                <div class="flex-none text-center">
+                    <span class="block text-xs uppercase mb-2 text-indigo-300">Result:</span>
+                    <button
+                        class="bg-white text-indigo-900 px-6 py-2 rounded-full font-bold hover:scale-105 transition-all cursor-pointer">
+                        Live Button
+                    </button>
                 </div>
             </div>
         </section>
 
     </main>
 
-    <footer class="bg-white border-t border-slate-200 py-12 text-center">
-        <p class="text-slate-400 text-sm">
-            Group Project SE-6 | Presentation: Wednesday 11:00am
-        </p>
+    <footer class="text-center py-10 text-slate-400 text-xs">
+        &copy; SE6-FIGMA
     </footer>
 
 </body>
