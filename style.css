@@ -47,7 +47,6 @@
 
 /* ========================
    BASE STYLES
-======================== */
 body {
   font-family: var(--font-family);
   font-size: var(--font-size-base);
@@ -73,7 +72,6 @@ img {
 
 /* ========================
    LAYOUT
-======================== */
 .container {
   max-width: var(--max-width);
   margin: 0 auto;
